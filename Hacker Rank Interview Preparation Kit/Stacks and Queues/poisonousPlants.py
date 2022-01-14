@@ -11,11 +11,11 @@ def poisonousPlants(p):
             stack = [(p[i], 0)]
             continue
         
-        extra_days = 1
+        biggest_buffer = 0
         while p[i] <= stack[-1][0]:
-            extra_days = max(extra_days, stack.pop()[1] + 1)
-        max_days = max(max_days, extra_days)
-        stack.append((p[i], extra_days))
+            biggest_buffer = max(biggest_buffer, stack.pop()[1] + 1)
+        max_days = max(max_days, 1 + biggest_buffer)
+        stack.append((p[i], 1 + biggest_buffer))
         
     return max_days
             

@@ -12,7 +12,6 @@ def shiftLinkedList(head, k):
     else:
         return head
     
-    
 def shiftForward(head, k):
     tail = head
     for i in range(0, k):
